@@ -7,6 +7,7 @@ import Experience from "./components/Experience";
 import Achievement from "./components/Achievement";
 import Contacts from "./components/Contacts";
 import About from "./components/About";
+import Blog from "./components/Blog";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/experience" component={Experience} />
       <Route path="/achievement" component={Achievement} />
+      <Route path="/blog" component={Blog} />
       <Route path="/about" component={About} />
       <Route path="/contacts" component={Contacts} />
     </>

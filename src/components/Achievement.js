@@ -11,7 +11,7 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
-import Navbar from "./Navbar";
+import Navbar from "./PersonalNavbar";
 import project1 from "../images/html-css-javascript-lg.jpg";
 import project2 from "../images/javascript-fullstack.jpg";
 import project3 from "../images/react-redux.jpg";
