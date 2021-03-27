@@ -11,12 +11,12 @@ import {
   Button,
   Typography,
 } from "@material-ui/core";
-import Navbar from "./PersonalNavbar";
+ 
 import project1 from "../images/html-css-javascript-lg.jpg";
 import project2 from "../images/javascript-fullstack.jpg";
 import project3 from "../images/react-redux.jpg";
 import project4 from "../images/mern-stack.jpg";
-
+import Navbar from './Navbar';
 const useStyles = makeStyles({
   mainContainer: {
     background: "#233",
@@ -32,8 +32,10 @@ const Achievement = () => {
   const classes = useStyles();
 
   return (
+    <>
+    <Navbar/> 
     <Box component="div" className={classes.mainContainer}>
-      <Navbar />
+      
       <Grid container justify="center">
         {/* Project 1 */}
         <Grid item xs={12} sm={8} md={6}>
@@ -165,6 +167,7 @@ const Achievement = () => {
         </Grid>
       </Grid>
     </Box>
+    </>
   );
 };
 

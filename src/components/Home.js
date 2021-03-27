@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./PersonalNavbar";
+import Navbar from "./Navbar";
 import Header from "./Header";
 import Particles from "react-particles-js";
 import { makeStyles } from "@material-ui/styles";
@@ -16,8 +16,8 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
-      <Header />
+    <Navbar/> 
+    <Header/>
       <Particles
         canvasClassName={classes.particlesCanva}
         params={{
@@ -58,7 +58,9 @@ const Home = () => {
             }
           }
         }}
+       
       />
+      
     </>
   );
 };

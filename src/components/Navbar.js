@@ -4,21 +4,22 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import MobilRightMenuSlider from "@material-ui/core/Drawer";
 import Footer from "./Footer";
-import './PersonalNavbar.css';
+import './Navbar.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import personalPicture from "../images/personalPic.jpg"
+import personalPicture from "../images/personalPic.jpg";
+
 import {
-  AppBar,
-  Toolbar,
+
   ListItem,
   ListItemIcon,
-  IconButton,
+
   ListItemText,
   Avatar,
   Divider,
   List,
   Typography,
   Box,
+  AppBar,
 } from "@material-ui/core";
 import {
   ArrowBack,
@@ -33,11 +34,16 @@ import { Nav, Navbar } from "react-bootstrap";
 
 
 // CSS STYLES
+
 const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
     background: "#511",
     height: "100%",
+  },
+  mainContainer: {
+    background: "#233",
+   
   },
   personalPicture: {
     display: "block",
@@ -119,26 +125,18 @@ const PersonalNavbar = () => {
   );
   return (
     <>
-      <Box component="nav">
-        <AppBar position="static" style={{ background: "#222" }} className="yahia-navbar">
-          
 
-            <Typography variant="h5" style={{ color: "tan" }}>
-
-              <div className="row">
-              
-             <div className="col-md-5">
-             <Navbar href="#home"> <Link to="/" style={{ color: "tan", textDecoration: "none" }} onClick={toggleSlider("right", true)} className="yahia">
-             <span className="yahia-s">Yahia's</span> <span className="yahia-s-portfolio">Portfolio</span>
-              </Link></Navbar>
-             </div>
-             <div className="col-md-7">
-             
-             <Navbar expand="lg">
-             <Navbar.Toggle   aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse className="header-container" id="basic-navbar-nav">
-                  <Nav>
-                    <Link to="/" style={{ color: "tan", textDecoration: "none", }} className="navbar-container">
+      <div className={classes.mainContainer}>
+        <div className="row">
+          <div className="col-10 mx-auto">
+          <Navbar  expand="lg">
+              <Navbar.Brand href="#home"><Link to="/" style={{ color: "tan", textDecoration: "none" }} onClick={toggleSlider("right", true)} className="yahia">
+                <span className="yahia-s">Yahia's</span> <span className="yahia-s-portfolio">Portfolio</span>
+              </Link></Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="ml-auto">
+                <Link to="/" style={{ color: "tan", textDecoration: "none", }} className="navbar-container">
                       Home
               </Link>
                     <Link to="/experience" style={{ color: "tan", textDecoration: "none", }} className="navbar-container">
@@ -157,33 +155,25 @@ const PersonalNavbar = () => {
                       Contacts
               </Link>
 
-                  </Nav>
+                </Nav>
 
-                </Navbar.Collapse>
-             
-                </Navbar>
-             </div>
-             
-              </div>
-                
+              </Navbar.Collapse>
+            </Navbar>
 
 
-          
-            </Typography>
+            <MobilRightMenuSlider
+              anchor="right"
+              open={state.right}
+              onClose={toggleSlider("right", false)}
+            >
+              {sideList("right")}
+              <Footer />
+            </MobilRightMenuSlider>
+          </div>
+        </div>
+      </div>
 
-          <MobilRightMenuSlider
-            anchor="right"
-            open={state.right}
-            onClose={toggleSlider("right", false)}
-          >
-            {sideList("right")}
-            <Footer />
-          </MobilRightMenuSlider>
-          
-        </AppBar>
 
-    </Box>
-      
     </>
   );
 };
